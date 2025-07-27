@@ -1,0 +1,113 @@
+\documentclass[11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{csquotes}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage[backend=biber, style=ieee]{biblatex}
+
+\DeclareFieldFormat[article]{title}{#1}
+\DeclareFieldFormat[book]{title}{#1}
+\DeclareFieldFormat[inbook]{title}{#1}
+\DeclareFieldFormat[inproceedings]{title}{#1}
+\DeclareFieldFormat[online]{title}{#1}
+\DeclareFieldFormat[misc]{title}{#1}
+
+\usepackage{tabto}
+\usepackage{hyphenat} % funktioniert net richtig glaube ich
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{caption}
+\usepackage{parskip}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{comment}
+\usepackage{multicol}
+\usepackage{float}
+
+% Optional: rename "Bibliography" to "References"
+\DefineBibliographyStrings{english}{
+  bibliography = {References},
+}
+
+\usepackage[
+  %showframe,
+  left=2cm,
+  right=2cm,
+  top=1.5cm,
+  bottom=3cm,
+]{geometry}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{colortbl}
+
+%Changing listing -> code snippet
+\renewcommand{\lstlistingname}{Code snippet}
+
+%Setting figure top space to 0
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+
+%Setting for chapter padding
+\usepackage{titlesec}
+\titlespacing*{\chapter}{0pt}{-1cm}{1em}
+
+%Settings for code
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=2mm,
+  belowskip=2mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\footnotesize\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=1
+}
+
+\addbibresource{Referenzen.bib}
+
+\title{\texttt{\Huge Autonomous Vehicles and Artificial Intelligence LAB\\ \\ \LARGE Turtlebot Moment}}
+\author{\begin{tabular}{ l c } Banujan Baskaran & 108019231918 \\ Abinash Selvarajah & 108019238460 \\ Masuthan Mathiyalakan & MATNR \\ Oleksandr Chaban & MATNR
+ \end{tabular}}
+\date{Bochum, 06. August 2025}
+
+\onehalfspacing
+\begin{document}
+\AddToShipoutPictureBG{
+    \includegraphics[width=\paperwidth,height=\paperheight]{images/front.png}
+}
+
+\maketitle
+\begin{sloppypar}
+
+\ClearShipoutPictureBG
+\tableofcontents
+\input{chapters/0_Introduction.tex}
+\input{chapters/1_Task_A.tex}
+\input{chapters/2_Task_B.tex}
+\input{chapters/3_Task_C.tex}
+\input{chapters/7_Discussion.tex}
+\input{chapters/appendix.tex}
+
+\addcontentsline{toc}{chapter}{10\hspace{1em}Bibliography} % Ensure proper closure of commands
+\printbibliography
+\end{sloppypar}
+
+\end{document}
+
